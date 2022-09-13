@@ -31,5 +31,6 @@ spec:
   type: LoadBalancer
   ports:
   - port: 5000
+    targetPort: 80
   selector:
     app: pupweb1
