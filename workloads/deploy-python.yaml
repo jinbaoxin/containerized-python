@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: pupweb
-  replicas: 6
+  replicas: 2
   template:
     metadata:
       labels:
@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: pupweb
-        image: fluxtestregistry.azurecr.io/pupweb/pubweb
+        image: nginx
         ports:
-        - containerPort: 5000
+        - containerPort: 80
 ---
   
 apiVersion: v1
