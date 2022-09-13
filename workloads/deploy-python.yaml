@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pupweb
+  name: pupweb1
 spec:
   selector:
     matchLabels:
-      app: pupweb
+      app: pupweb1
   replicas: 2
   template:
     metadata:
       labels:
-        app: pupweb
+        app: pupweb1
     spec:
       containers:
-      - name: pupweb
+      - name: pupweb1
         image: nginx
         ports:
         - containerPort: 80
@@ -22,12 +22,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: pupweb
+  name: pupweb1
   labels:
-    app: pupweb
+    app: pupweb1
 spec:
   type: LoadBalancer
   ports:
   - port: 5000
   selector:
-    app: pupweb
+    app: pupweb1
